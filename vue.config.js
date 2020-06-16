@@ -1,5 +1,6 @@
 const path = require('path')
-const UglifyPlugin = require('uglifyjs-webpack-plugin')
+const TerserPlugin = require('terser-webpack-plugin')
+const CompressionWebpackPlugin = require('compression-webpack-plugin')
 
 module.exports = {
   publicPath: process.env.NODE_ENV === 'production' ? '/my-project/' : './', // 基本路径--部署应用包时的基本 URL
@@ -8,45 +9,83 @@ module.exports = {
   // see https://github.com/vuejs/vue-cli/blob/dev/docs/webpack.md
   // webpack配置
   chainWebpack: config => {
+    // ============压缩图片 start============
+    config.module
+      .rule('images')
+      .use('image-webpack-loader')
+      .loader('image-webpack-loader')
+      .options({ bypassOnDebug: true })
+      .end()
+    // ============压缩图片 end============
   },
   configureWebpack: config => {
     if (process.env.NODE_ENV === 'production') {
       // 为生产环境修改配置...
       config.mode = 'production'
       // 将每个依赖包打包成单独的js文件
-      const optimization = {
-        runtimeChunk: 'single',
+      config.plugins.push(
+        new TerserPlugin({
+          terserOptions: {
+            // 生产环境自动删除console
+            warnings: false, // 若打包错误，则注释这行
+            compress: {
+              drop_debugger: true,
+              drop_console: true,
+              pure_funcs: ['console.log']
+            }
+          },
+          sourceMap: false,
+          parallel: true
+        })
+      )
+      // gzip压缩
+      const productionGzipExtensions = ['html', 'js', 'css']
+      config.plugins.push(
+        new CompressionWebpackPlugin({
+          filename: '[path].gz[query]',
+          algorithm: 'gzip',
+          test: new RegExp(
+            '\\.(' + productionGzipExtensions.join('|') + ')$'
+          ),
+          threshold: 10240, // 只有大小大于该值的资源会被处理 10240
+          minRatio: 0.8, // 只有压缩率小于这个值的资源才会被处理
+          deleteOriginalAssets: false // 删除原文件
+        })
+      )
+      // 公共代码抽离
+      config.optimization = {
         splitChunks: {
-          chunks: 'all',
-          maxInitialRequests: Infinity,
-          minSize: 20000,
           cacheGroups: {
             vendor: {
-              test: /[\\/]node_modules[\\/]/,
-              name(module) {
-                // get the name. E.g. node_modules/packageName/not/this/part.js
-                // or node_modules/packageName
-                const packageName = module.context.match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/)[1]
-                // npm package names are URL-safe, but some servers don't like @ symbols
-                return `npm.${packageName.replace('@', '')}`
-              }
+              chunks: 'all',
+              test: /node_modules/,
+              name: 'vendor',
+              minChunks: 1,
+              maxInitialRequests: 5,
+              minSize: 0,
+              priority: 100
+            },
+            common: {
+              chunks: 'all',
+              test: /[\\/]src[\\/]js[\\/]/,
+              name: 'common',
+              minChunks: 2,
+              maxInitialRequests: 5,
+              minSize: 0,
+              priority: 60
+            },
+            styles: {
+              name: 'styles',
+              test: /\.(sa|sc|c)ss$/,
+              chunks: 'all',
+              enforce: true
+            },
+            runtimeChunk: {
+              name: 'manifest'
             }
           }
-        },
-        minimizer: [new UglifyPlugin({
-          uglifyOptions: {
-            compress: {
-              warnings: false,
-              drop_console: true, // console
-              drop_debugger: false,
-              pure_funcs: ['console.log'] // 移除console
-            }
-          }
-        })]
+        }
       }
-      Object.assign(config, {
-        optimization
-      })
     } else {
       // 为开发环境修改配置...
       config.mode = 'development'
