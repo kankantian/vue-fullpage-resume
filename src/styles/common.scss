@@ -1,0 +1,27 @@
+$nav-height: 5rem;
+
+*{
+	margin:0;
+	padding:0;
+	color: #fff;
+	list-style: none;
+	text-decoration: none;
+	font-family: 'youyuan';
+	/*font:16px/1.8 "Microsoft Yahet",verdana;*/
+    font-weight: normal;
+}
+
+.clearfix::after {
+    clear: both;
+    display: block;
+    content: '';
+  }
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.flex-1 {
+    flex: 1;
+}

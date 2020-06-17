@@ -93,6 +93,7 @@ module.exports = {
     Object.assign(config, {
       // 开发生产共同配置
       resolve: {
+        extensions: ['.js', '.vue'],
         alias: {
           '@': path.resolve(__dirname, './src'),
           '@c': path.resolve(__dirname, './src/components'),
@@ -107,7 +108,10 @@ module.exports = {
     extract: true, // 是否使用css分离插件 ExtractTextPlugin
     sourceMap: false, // 开启 CSS source maps?
     loaderOptions: {
-      css: {} // 这里的选项会传递给 css-loader
+      css: {}, // 这里的选项会传递给 css-loader
+      scss: {
+        prependData: `@import "@/styles/common.scss";`
+      }
     //   postcss: {} // 这里的选项会传递给 postcss-loader
     }, // css预设器配置项 详见https://cli.vuejs.org/zh/config/#css-loaderoptions
     requireModuleExtension: false // 启用 CSS modules for all css / pre-processor files.
