@@ -4,18 +4,27 @@
     <full-page ref="fullpage" :options="options">
       <div class="section">
         <div class="box box1">
-          section1
-          <div>111</div>
+          <Home />
         </div>
       </div>
       <div class="section">
         <div class="box box2">
-          section2
+          <Aboutme />
         </div>
       </div>
       <div class="section">
         <div class="box box3">
-          section3
+          <Project />
+        </div>
+      </div>
+      <div class="section">
+        <div class="box box4">
+          section4
+        </div>
+      </div>
+      <div class="section">
+        <div class="box box5">
+          section5
         </div>
       </div>
     </full-page>
@@ -24,10 +33,20 @@
 
 <script>
 import Nav from '@v/layout/Nav.vue'
+// 自动化导入组件
+const path = require('path')
+const files = require.context('@v/components/pages', false, /\.vue$/)
+const modules = {}
+files.keys().forEach(key => {
+  const name = path.basename(key, '.vue')
+  modules[name] = files(key).default || files(key)
+})
+
 export default {
   name: '',
   components: {
-    Nav
+    Nav,
+    ...modules
   },
   data() {
     return {
@@ -39,7 +58,7 @@ export default {
         menu: '#menu',
         navigation: true, // 是否显示导航，默认为false
         navigationPosition: 'right', // 导航小圆点的位置
-        anchors: ['page1', 'page2', 'page3'],
+        anchors: ['page1', 'page2', 'page3', 'page4', 'page5'],
         sectionsColor: [
           '#41b883',
           '#ff5f45',

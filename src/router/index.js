@@ -16,20 +16,27 @@ const routes = [
   {
     path: '/page1',
     name: 'Index',
-    component: () =>
-      import('@v/Index.vue')
+    redirect: '/'
   },
   {
     path: '/page2',
     name: 'Index',
-    component: () =>
-      import('@v/Index.vue')
+    redirect: '/'
   },
   {
     path: '/page3',
     name: 'Index',
-    component: () =>
-      import('@v/Index.vue')
+    redirect: '/'
+  },
+  {
+    path: '/page4',
+    name: 'Index',
+    redirect: '/'
+  },
+  {
+    path: '/page5',
+    name: 'Index',
+    redirect: '/'
   }
 ]
 

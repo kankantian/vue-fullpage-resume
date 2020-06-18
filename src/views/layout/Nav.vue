@@ -1,7 +1,7 @@
 <template>
   <div class="nav flex">
     <div class="nav_logo">
-      <a href="index.html">Fuck You</a>
+      <a href="/">Fuck You</a>
     </div>
     <ul id="menu" class="nav_bar">
       <li
@@ -9,7 +9,9 @@
         :key="item.title"
         :data-menuanchor="item.pageAnchor"
         @click="toPage(item.pageAnchor)"
-      ><a :href="`#${item.pageAnchor}`">{{ item.title }}</a></li>
+      >
+        <a :href="`#${item.pageAnchor}`">{{ item.title }}</a>
+      </li>
     </ul>
   </div>
 </template>
