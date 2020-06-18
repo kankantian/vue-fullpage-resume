@@ -1,6 +1,6 @@
 <template>
-  <div class="nav flex">
-    <div class="nav_logo">
+  <div class="nav flex" :class="{ 'sm-nav': device ==='mobile'}">
+    <div v-if="device!=='mobile'" class="nav_logo">
       <a href="/">Fuck You</a>
     </div>
     <ul id="menu" class="nav_bar">
@@ -51,6 +51,11 @@ export default {
       ]
     }
   },
+  computed: {
+    device() {
+      return this.$store.state.app.device
+    }
+  },
   methods: {
     toPage(payload) {
       // console.log(payload)
@@ -75,7 +80,7 @@ export default {
     }
   }
   .nav_bar{
-    width:60%;
+    width: 60%;
     li {
       float: left;
       width: 20%;
@@ -84,6 +89,11 @@ export default {
         font-size: 1.25rem;
       }
     }
+  }
+}
+.sm-nav{
+  .nav_bar{
+    width: 100%;
   }
 }
 </style>

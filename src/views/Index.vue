@@ -33,6 +33,7 @@
 
 <script>
 import Nav from '@v/layout/Nav.vue'
+import ResizeMixin from '@/utils/ResizeHandler.js'
 // 自动化导入组件
 const path = require('path')
 const files = require.context('@v/components/pages', false, /\.vue$/)
@@ -48,6 +49,7 @@ export default {
     Nav,
     ...modules
   },
+  mixins: [ResizeMixin],
   data() {
     return {
       options: {
@@ -72,6 +74,15 @@ export default {
         ]
       }
     }
+  },
+  computed: {
+    device() {
+      return this.$store.state.app.device
+    }
+  },
+  watch: {
+  },
+  mounted() {
   },
   methods: {
     afterLoad: function(origin, destination, direction) {
