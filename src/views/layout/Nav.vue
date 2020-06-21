@@ -1,5 +1,5 @@
 <template>
-  <div class="nav flex" :class="{ 'sm-nav': device ==='mobile'}">
+  <div class="nav flex" :class="{ 'sm-nav': device ==='mobile', 'black': pageIndex !==1 }">
     <div v-if="device!=='mobile'" class="nav_logo">
       <a href="/">Fuck You</a>
     </div>
@@ -20,9 +20,9 @@
 export default {
   name: 'Nav',
   props: {
-    msg: {
-      type: String,
-      default: ''
+    pageIndex: {
+      type: Number,
+      default: 1
     }
   },
   data() {
@@ -48,7 +48,8 @@ export default {
           title: '主页5',
           pageAnchor: 'page5'
         }
-      ]
+      ],
+      // curPage: 1
     }
   },
   computed: {
@@ -56,6 +57,7 @@ export default {
       return this.$store.state.app.device
     }
   },
+  
   methods: {
     toPage(payload) {
       // console.log(payload)
@@ -72,6 +74,7 @@ export default {
   position: fixed;
   z-index: 999;
   height: $nav-height;
+  justify-content: space-around;
   .nav_logo {
     width:20%;
     margin-left: 4rem;
@@ -86,7 +89,7 @@ export default {
       width: 20%;
       text-align: center;
       a {
-        font-size: 1.25rem;
+        font-size: 1.5rem;
       }
     }
   }
@@ -95,5 +98,8 @@ export default {
   .nav_bar{
     width: 100%;
   }
+}
+.black{
+  background-color: #262a40;
 }
 </style>

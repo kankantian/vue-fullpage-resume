@@ -1,6 +1,6 @@
 <template>
   <div class="index">
-    <Nav @moveTo="toPage" />
+    <Nav :pageIndex="pageIndex" @moveTo="toPage" />
     <full-page ref="fullpage" :options="options">
       <div class="section">
         <div class="box box1">
@@ -54,25 +54,26 @@ export default {
     return {
       options: {
         licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',
-        // afterLoad: this.afterLoad,
+        afterLoad: this.afterLoad,
         scrollOverflow: true,
         scrollBar: false,
         menu: '#menu',
         navigation: true, // 是否显示导航，默认为false
         navigationPosition: 'right', // 导航小圆点的位置
         anchors: ['page1', 'page2', 'page3', 'page4', 'page5'],
-        sectionsColor: [
-          '#41b883',
-          '#ff5f45',
-          '#0798ec',
-          '#fec401',
-          '#1bcee6',
-          '#ee1a59',
-          '#2c3e4f',
-          '#ba5be9',
-          '#b4b8ab'
-        ]
-      }
+        // sectionsColor: [
+        //   '#41b883',
+        //   '#ff5f45',
+        //   '#0798ec',
+        //   '#fec401',
+        //   '#1bcee6',
+        //   '#ee1a59',
+        //   '#2c3e4f',
+        //   '#ba5be9',
+        //   '#b4b8ab'
+        // ]
+      },
+      pageIndex: 1 // 当前页
     }
   },
   computed: {
@@ -86,8 +87,9 @@ export default {
   },
   methods: {
     afterLoad: function(origin, destination, direction) {
-      console.log('After load....')
-      console.log(destination)
+      // console.log('After load....')
+      // console.log(destination.index+1)
+      this.pageIndex = destination.index + 1
     },
     toPage(payload) {
       this.$refs.fullpage.api.moveTo(payload, 1)
@@ -97,10 +99,21 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.section{
-  .box {
-    padding: $nav-height 2rem 0;
 
+.index {
+  background: #f5f5f5;
+  .section{
+    .box {
+      padding: $nav-height 2rem 0;
+      box-sizing: border-box;
+    }
+    .box1{
+      background: url('../assets/bg.jpg') center no-repeat;
+      background-size: cover; 
+      min-height: 100%;
+      
+    }
   }
 }
+
 </style>
