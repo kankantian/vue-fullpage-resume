@@ -1,5 +1,5 @@
 <template>
-  <div class="nav flex" :class="{ 'sm-nav': device ==='mobile', 'black': pageIndex !==1 }">
+  <div class="nav flex" :class="{ 'sm-nav': device ==='mobile', 'black': pageIndex !==1 && pageIndex !==3 }">
     <div v-if="device!=='mobile'" class="nav_logo">
       <a href="/">Fuck You</a>
     </div>
@@ -48,7 +48,7 @@ export default {
           title: '主页5',
           pageAnchor: 'page5'
         }
-      ],
+      ]
       // curPage: 1
     }
   },
@@ -57,7 +57,6 @@ export default {
       return this.$store.state.app.device
     }
   },
-  
   methods: {
     toPage(payload) {
       // console.log(payload)
@@ -69,6 +68,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+$nav-height: 4rem;
 .nav {
   width: 100%;
   position: fixed;
@@ -77,7 +77,7 @@ export default {
   justify-content: space-around;
   .nav_logo {
     width:20%;
-    margin-left: 4rem;
+    margin-left: $nav-height;
     a {
       font-size: 3.5rem;
     }
@@ -90,6 +90,21 @@ export default {
       text-align: center;
       a {
         font-size: 1.5rem;
+        line-height: $nav-height;
+        &:after{
+          display: block;
+          content: "";
+          height: 2px;
+          width: 0%;
+          background-color: #80d6f2;
+          transition: width .5s ease-in;
+          -moz-transition: width .5s ease-in;
+          -webkit-transition: width .5s ease-in;
+          -o-transition: width .5s ease-in;
+        }
+        &:hover:after{
+          width: 100%;
+        }
       }
     }
   }

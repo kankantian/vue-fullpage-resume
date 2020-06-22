@@ -104,18 +104,18 @@ module.exports = {
   },
   productionSourceMap: false, // 生产环境是否生成 sourceMap 文件
   // css相关配置
-  css: {
-    extract: true, // 是否使用css分离插件 ExtractTextPlugin
-    sourceMap: false, // 开启 CSS source maps?
-    loaderOptions: {
-      css: {}, // 这里的选项会传递给 css-loader
-      scss: {
-        prependData: `@import "@/styles/common.scss";`
-      }
-    //   postcss: {} // 这里的选项会传递给 postcss-loader
-    }, // css预设器配置项 详见https://cli.vuejs.org/zh/config/#css-loaderoptions
-    requireModuleExtension: false // 启用 CSS modules for all css / pre-processor files.
-  },
+  // css: {
+  //   extract: true, // 是否使用css分离插件 ExtractTextPlugin
+  //   sourceMap: false, // 开启 CSS source maps?
+  //   loaderOptions: {
+  //     css: {}, // 这里的选项会传递给 css-loader
+  //     scss: {
+  //       // prependData: `@import "@/styles/common.scss";`
+  //     }
+  //   //   postcss: {} // 这里的选项会传递给 postcss-loader
+  //   }, // css预设器配置项 详见https://cli.vuejs.org/zh/config/#css-loaderoptions
+  //   requireModuleExtension: false // 启用 CSS modules for all css / pre-processor files.
+  // },
   parallel: require('os').cpus().length > 1, // 是否为 Babel 或 TypeScript 使用 thread-loader。该选项在系统的 CPU 有多于一个内核时自动启用，仅作用于生产构建。
   pwa: {}, // PWA 插件相关配置 see https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-pwa
   // webpack-dev-server 相关配置

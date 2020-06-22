@@ -1,6 +1,6 @@
 <template>
-  <div class="home">
-    <h1>Aboutme</h1>
+  <div class="about">
+    <h1>主页2</h1>
   </div>
 </template>
 
@@ -16,4 +16,9 @@ export default {
 }
 </script>
 <style scoped lang="scss">
+.about{
+  *{
+    color: #333;
+  }
+}
 </style>
