@@ -49,7 +49,6 @@ export default {
           pageAnchor: 'page5'
         }
       ]
-      // curPage: 1
     }
   },
   computed: {
@@ -68,7 +67,6 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-$nav-height: 4rem;
 .nav {
   width: 100%;
   position: fixed;

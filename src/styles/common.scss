@@ -25,3 +25,39 @@ $nav-height: 4rem;
 .flex-1 {
     flex: 1;
 }
+
+.fp-prev{
+    left: 4rem !important;
+    border-width: 19px 17px 19px 0 !important;
+}
+.fp-next {
+    right: 4rem  !important;
+    border-width: 19px 0 19px 17px !important;
+}
+/deep/ {
+   .fp-slidesNav {
+        text-align: center;
+        bottom: 3% !important;
+        ul {
+            li {
+                span {
+                    background-color: #fff;
+                }
+            }
+        }
+    } 
+}
+.fp-right{
+    ul {
+        li {
+            a {
+                span {
+                    background: #fff !important;
+                }
+            }
+            
+        }
+    }
+}
+
+

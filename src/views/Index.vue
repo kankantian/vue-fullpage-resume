@@ -20,15 +20,7 @@
       </div>
       <div class="section">
         <div class="box box4">
-          <div class="slide">
-            <h3>Slide 2.1</h3>
-          </div>
-          <div class="slide">
-            <h3>Slide 2.2</h3>
-          </div>
-          <div class="slide">
-            <h3>Slide 2.3</h3>
-          </div>
+          section4
         </div>
       </div>
       <div class="section">
@@ -42,10 +34,10 @@
 
 <script>
 import Nav from './layout/Nav.vue'
-// import ResizeMixin from '@/utils/ResizeHandler.js'
+import ResizeMixin from '@/utils/ResizeHandler.js'
 // 自动化导入组件
 const path = require('path')
-const files = require.context('./components/pages', false, /\.vue$/)
+const files = require.context('./pages', false, /\.vue$/)
 const modules = {}
 files.keys().forEach(key => {
   const name = path.basename(key, '.vue')
@@ -58,7 +50,7 @@ export default {
     Nav,
     ...modules
   },
-  // mixins: [ResizeMixin],
+  mixins: [ResizeMixin],
   data() {
     return {
       options: {
@@ -70,8 +62,8 @@ export default {
         navigation: true, // 是否显示导航，默认为false
         navigationPosition: 'right', // 导航小圆点的位置
         anchors: ['page1', 'page2', 'page3', 'page4', 'page5'],
-        controlArrows: true, // 用来控制slide幻灯片的箭头，设置为false，两侧的箭头会消失
-        verticalCentered: true, // 每一页幻灯片的内容是否垂直居中
+        controlArrows: false, // 用来控制slide幻灯片的箭头，设置为false，两侧的箭头会消失
+        // verticalCentered: true, // 每一页幻灯片的内容是否垂直居中
         slidesNavigation: true, // 是否显示横向幻灯片的导航
         slidesNavPosition: 'bottom', // 横向幻灯片导航的位置，可以为top或者bottom
         sectionsColor: [
@@ -112,25 +104,23 @@ export default {
 </script>
 
 <style scoped lang="scss">
-$nav-height: 4rem;
 .index {
   background: #f5f5f5;
   .section{
     position: relative;
     .box {
-      padding: $nav-height 2rem 0;
+      // padding: $nav-height 2rem;
       box-sizing: border-box;
+      min-height: 100%;
     }
     .box1{
       background: url('../assets/bg.jpg') center no-repeat;
       background-size: cover;
-      min-height: 100%;
     }
     .box3{
       background: url('../assets/project-bg.jpg') center no-repeat;
       background-attachment: scroll;
       background-size: cover;
-      height: 100%;
     }
     .box3-modal{
       position: absolute;

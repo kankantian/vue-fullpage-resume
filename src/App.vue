@@ -24,32 +24,5 @@ export default {
 //   text-align: center;
 //   color: #2c3e50;
 // }
-$nav-height: 4rem;
-
-*{
-	margin:0;
-	padding:0;
-	color: #fff;
-	list-style: none;
-	text-decoration: none;
-	font-family: 'youyuan';
-	/*font:16px/1.8 "Microsoft Yahet",verdana;*/
-    font-weight: normal;
-}
-
-.clearfix::after {
-    clear: both;
-    display: block;
-    content: '';
-  }
-
-.flex {
-    display: flex;
-    align-items: center;
-}
-
-.flex-1 {
-    flex: 1;
-}
 
 </style>

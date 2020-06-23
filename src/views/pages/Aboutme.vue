@@ -1,12 +1,12 @@
 <template>
-  <div class="home">
-    <h1>Home</h1>
+  <div class="about">
+    <h1>主页2</h1>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Home',
+  name: 'Aboutme',
   props: {
     msg: {
       type: String,
@@ -16,7 +16,10 @@ export default {
 }
 </script>
 <style scoped lang="scss">
-.home{
-  text-align: center;
+.about{
+  padding: $nav-height 2rem;
+  *{
+    color: #333;
+  }
 }
 </style>
