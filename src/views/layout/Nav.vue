@@ -1,5 +1,5 @@
 <template>
-  <div class="nav flex" :class="{ 'sm-nav': device ==='mobile', 'black': pageIndex !==1 && pageIndex !==3 }">
+  <div class="nav flex" :class="{ 'sm-nav': device ==='mobile', 'black': pageIndex !==1 && pageIndex !==2 && pageIndex !==3 }">
     <div v-if="device!=='mobile'" class="nav_logo">
       <a href="/">Fuck You</a>
     </div>

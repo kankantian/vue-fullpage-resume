@@ -68,13 +68,13 @@ export default {
         slidesNavPosition: 'bottom', // 横向幻灯片导航的位置，可以为top或者bottom
         sectionsColor: [
           '#41b883',
-          '#ff5f45',
+          '#6515a7',
           '#0798ec',
           '#fec401',
           '#1bcee6',
           '#ee1a59',
           '#2c3e4f',
-          '#ba5be9',
+          '#ff5f45',
           '#b4b8ab'
         ]
       },
@@ -111,7 +111,7 @@ export default {
     .box {
       // padding: $nav-height 2rem;
       box-sizing: border-box;
-      min-height: 100%;
+      height: 100%;
     }
     .box1{
       background: url('../assets/bg.jpg') center no-repeat;
