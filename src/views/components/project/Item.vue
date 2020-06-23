@@ -2,7 +2,7 @@
   <div v-if="device!=='mobile'" class="flex project-item">
     <!-- <div v-if="device!=='mobile'" class="flex"> -->
     <div class="info">
-      <img :src="info.img" alt="">
+      <div class="img"><img :src="info.img" alt=""></div>
       <h3 class="pro-name">
         {{ info.name }}
       </h3>
@@ -64,10 +64,17 @@ export default {
   align-items: flex-start !important;
   .info {
     width: 25%;
-    img {
-      display: block;
-      width: 100%;
-      // height: 200px;
+    .img{
+      overflow: hidden;
+      img {
+        display: block;
+        width: 100%;
+        // height: 200px;
+        &:hover{
+          transform: scale(2);
+          transition: All 10s ease;
+        }
+      }
     }
     .pro-name {
       padding: 1rem 0;
