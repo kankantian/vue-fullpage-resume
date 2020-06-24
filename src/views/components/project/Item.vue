@@ -69,7 +69,6 @@ export default {
       img {
         display: block;
         width: 100%;
-        // height: 200px;
         &:hover{
           transform: scale(2);
           transition: All 10s ease;

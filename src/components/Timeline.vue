@@ -78,6 +78,7 @@ export default {
       padding-bottom: 0.5rem;
     }
     .content {
+      margin-top: 0.5rem;
       .company{
         padding-bottom: 0.5rem;
       }
