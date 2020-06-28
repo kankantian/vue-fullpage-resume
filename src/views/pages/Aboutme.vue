@@ -47,5 +47,10 @@ export default {
   min-height: 100%;
   padding-top: 10%;
   width: 80%;
+
+  // position: absolute;
+  // left: 8%;
+  // top: 15%;
+  // width: 84%;
 }
 </style>

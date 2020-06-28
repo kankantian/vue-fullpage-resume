@@ -20,12 +20,12 @@
       </div>
       <div class="section">
         <div class="box box4">
-          section4
+          <Skill />
         </div>
       </div>
       <div class="section">
         <div class="box box5">
-          section5
+          <About />
         </div>
       </div>
     </full-page>

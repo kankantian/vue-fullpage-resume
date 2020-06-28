@@ -105,7 +105,7 @@ module.exports = {
   productionSourceMap: false, // 生产环境是否生成 sourceMap 文件
   // css相关配置
   css: {
-    extract: true, // 是否使用css分离插件 ExtractTextPlugin
+    // extract: true, // 是否使用css分离插件 ExtractTextPlugin
     sourceMap: false, // 开启 CSS source maps?
     loaderOptions: {
       css: {}, // 这里的选项会传递给 css-loader
