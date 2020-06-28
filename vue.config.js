@@ -3,7 +3,7 @@ const TerserPlugin = require('terser-webpack-plugin')
 const CompressionWebpackPlugin = require('compression-webpack-plugin')
 
 module.exports = {
-  publicPath: process.env.NODE_ENV === 'production' ? '/vue-fullpage-resume/' : '/', // 基本路径--部署应用包时的基本 URL
+  publicPath: process.env.NODE_ENV === 'production' ? '/vue-fullpage-resume/dist/' : '/', // 基本路径--部署应用包时的基本 URL
   outputDir: 'dist', // 输出文件目录
   lintOnSave: true, // eslint-loader 是否在保存的时候检查
   // see https://github.com/vuejs/vue-cli/blob/dev/docs/webpack.md
