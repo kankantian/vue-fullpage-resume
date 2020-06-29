@@ -46,7 +46,7 @@ export default {
         display: block;
         bottom: 0;
         left: 0;
-        width: 100px;
+        width: 20%;
         height: 0;
         border-top-width: 1px;
         border-top-style: solid;

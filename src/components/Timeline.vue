@@ -73,7 +73,7 @@ export default {
 }
 .sm-timeline {
   font-size: 0.5rem;
-  padding-top: 15%;
+  padding-top: 5%;
   .timeitem {
     .date-range {
       padding-bottom: 0.5rem;

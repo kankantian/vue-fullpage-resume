@@ -68,15 +68,11 @@ export default {
         slidesNavigation: true, // 是否显示横向幻灯片的导航
         slidesNavPosition: 'bottom', // 横向幻灯片导航的位置，可以为top或者bottom
         sectionsColor: [
-          '#41b883',
+          '',
           '#6515a7',
           '#0798ec',
           '#fec401',
-          '#1bcee6',
-          '#ee1a59',
-          '#2c3e4f',
-          '#ff5f45',
-          '#b4b8ab'
+          '#1bcee6'
         ]
       },
       pageIndex: 1 // 当前页

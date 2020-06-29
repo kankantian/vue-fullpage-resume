@@ -64,9 +64,5 @@ export default {
   // // min-height: 90%;
   // background-color: rgba(166, 77, 121, 0.31);
   position: relative;
-  // padding: 1.25rem 1rem;
-  * {
-    color: red;
-  }
 }
 </style>
