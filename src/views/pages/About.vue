@@ -32,7 +32,7 @@ export default {
           value: '圆桌会议3'
         },
         {
-          key: '毕业院校1',
+          key: '扎心',
           value: '圆桌会议32'
         }
       ]
