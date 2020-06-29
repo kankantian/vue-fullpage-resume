@@ -21,6 +21,6 @@ git commit -m 'deploy'
 
 # 部署到 https://<USERNAME>.github.io/<REPO>
 # git push -f https://github.com/kankantian/vue-fullpage-resume.git master:gh-pages
-git subtree push --prefix dist origin gh-pages
+git push -f https://github.com/kankantian/vue-fullpage-resume.git gh-pages
 
 cd -
