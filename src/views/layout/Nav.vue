@@ -113,7 +113,7 @@ export default {
     width: 100%;
     li {
       a{
-        font-size: 1.1rem;
+        font-size: 0.8rem;
       }
     }
   }

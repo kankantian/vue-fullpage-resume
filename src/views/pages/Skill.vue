@@ -33,6 +33,36 @@ export default {
           dateRange: '2020/01 -- 2020/06',
           company: '圆桌会议3',
           detail: 'CoolSite360，采用标准的html及css规范，使您的设计便于维护及二次开发，通过导出功能，可输出干净的html文档结构及css样式表，便于后期添加个性化功能3。'
+        },
+        {
+          dateRange: '2018/06 -- 2019/06',
+          company: '圆桌会议1',
+          detail: 'CoolSite360，采用标准的html及css规范，使您的设计便于维护及二次开发，通过导出功能，可输出干净的html文档结构及css样式表，便于后期添加个性化功能4。'
+        },
+        {
+          dateRange: '2019/06 -- 2020/01',
+          company: '圆桌会议2',
+          detail: 'CoolSite360，采用标准的html及css规范，使您的设计便于维护及二次开发，通过导出功能，可输出干净的html文档结构及css样式表，便于后期添加个性化功能5。'
+        },
+        {
+          dateRange: '2020/01 -- 2020/06',
+          company: '圆桌会议3',
+          detail: 'CoolSite360，采用标准的html及css规范，使您的设计便于维护及二次开发，通过导出功能，可输出干净的html文档结构及css样式表，便于后期添加个性化功能6。'
+        },
+        {
+          dateRange: '2018/06 -- 2019/06',
+          company: '圆桌会议1',
+          detail: 'CoolSite360，采用标准的html及css规范，使您的设计便于维护及二次开发，通过导出功能，可输出干净的html文档结构及css样式表，便于后期添加个性化功能7。'
+        },
+        {
+          dateRange: '2019/06 -- 2020/01',
+          company: '圆桌会议2',
+          detail: 'CoolSite360，采用标准的html及css规范，使您的设计便于维护及二次开发，通过导出功能，可输出干净的html文档结构及css样式表，便于后期添加个性化功能8。'
+        },
+        {
+          dateRange: '2020/01 -- 2020/06',
+          company: '圆桌会议3',
+          detail: 'CoolSite360，采用标准的html及css规范，使您的设计便于维护及二次开发，通过导出功能，可输出干净的html文档结构及css样式表，便于后期添加个性化功能9。'
         }
       ]
     }
