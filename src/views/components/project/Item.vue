@@ -91,11 +91,11 @@ export default {
 .sm-project {
   position: relative;
   margin: 0 auto;
+  // top: 50%;
   width: 88%;
-  padding: 0.5rem;
-  background-color: rgba(166, 77, 121, 0.31);
-  height: calc(100% - 8rem);
   .sm-detail{
+    background-color: rgba(166, 77, 121, 0.31);
+    overflow-y: scroll;
     /deep/ .info-item {
       padding: 0.5rem;
       .title {
