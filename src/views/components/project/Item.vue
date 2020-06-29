@@ -32,6 +32,7 @@
 </template>
 
 <script>
+import { store } from '@/store/index'
 import InfoItem from '@v/components/project/InfoItem.vue'
 export default {
   name: 'ProjectItem',
@@ -48,7 +49,7 @@ export default {
   },
   computed: {
     device() {
-      return this.$store.state.app.device
+      return store.state.device
     }
   }
 }

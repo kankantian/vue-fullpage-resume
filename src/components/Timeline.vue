@@ -11,6 +11,7 @@
 </template>
 
 <script>
+import { store } from '@/store/index'
 export default {
   name: 'Timeline',
   props: {
@@ -23,7 +24,7 @@ export default {
   },
   computed: {
     device() {
-      return this.$store.state.app.device
+      return store.state.device
     }
   }
 }

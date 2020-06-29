@@ -1,5 +1,4 @@
-import store from '@/store'
-
+import { mutations } from '@/store/index'
 const { body } = document
 const WIDTH = 1024
 const RATIO = 3
@@ -18,7 +17,7 @@ export default {
   mounted() {
     const isMobile = this.isMobile()
     if (isMobile) {
-      store.dispatch('ToggleDevice', 'mobile')
+      mutations.toggleDevice('mobile')
     }
   },
   methods: {
@@ -29,7 +28,7 @@ export default {
     resizeHandler() {
       if (!document.hidden) {
         const isMobile = this.isMobile()
-        store.dispatch('ToggleDevice', isMobile ? 'mobile' : 'desktop')
+        mutations.toggleDevice(isMobile ? 'mobile' : 'desktop')
       }
     }
   }
