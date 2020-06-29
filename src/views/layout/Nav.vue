@@ -17,6 +17,7 @@
 </template>
 
 <script>
+import { store } from '@/store/index'
 export default {
   name: 'Nav',
   props: {
@@ -53,7 +54,7 @@ export default {
   },
   computed: {
     device() {
-      return this.$store.state.app.device
+      return store.state.device
     }
   },
   methods: {
@@ -110,6 +111,11 @@ export default {
 .sm-nav{
   .nav_bar{
     width: 100%;
+    li {
+      a{
+        font-size: 14px;
+      }
+    }
   }
 }
 .black{

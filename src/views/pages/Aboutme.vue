@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import Timeline from '@/components/Timeline.vue';
+import Timeline from '@/components/Timeline.vue'
 export default {
   name: 'Aboutme',
   components: {
@@ -50,7 +50,7 @@ export default {
 
   // position: absolute;
   // left: 8%;
-  // top: 15%;
+  // top: 10%;
   // width: 84%;
 }
 </style>

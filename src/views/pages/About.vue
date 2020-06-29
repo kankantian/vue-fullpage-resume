@@ -30,6 +30,10 @@ export default {
         {
           key: '毕业院校',
           value: '圆桌会议3'
+        },
+        {
+          key: '扎心',
+          value: '圆桌会议32'
         }
       ]
     }

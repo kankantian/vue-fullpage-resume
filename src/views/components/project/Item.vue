@@ -1,6 +1,5 @@
 <template>
   <div v-if="device!=='mobile'" class="flex project-item">
-    <!-- <div v-if="device!=='mobile'" class="flex"> -->
     <div class="info">
       <div class="img"><img :src="info.img" alt=""></div>
       <h3 class="pro-name">
@@ -13,16 +12,8 @@
         <InfoItem :key="item.key" :data="item" />
       </template>
     </div>
-    <!-- </div> -->
-    <!-- <div v-else>
-      <div class="detail sm-detail">
-        <temeplate v-for="item in info.detail" :key="item">
-          <InfoItem :data="item" />
-        </temeplate>
-      </div>
-    </div> -->
   </div>
-  <div v-else class="flex project-item sm-project">
+  <div v-else class="sm-project">
     <div class="detail sm-detail">
       <template v-for="item in info.detail">
         <InfoItem :key="item.key" :data="item" />
@@ -32,6 +23,7 @@
 </template>
 
 <script>
+import { store } from '@/store/index'
 import InfoItem from '@v/components/project/InfoItem.vue'
 export default {
   name: 'ProjectItem',
@@ -48,7 +40,7 @@ export default {
   },
   computed: {
     device() {
-      return this.$store.state.app.device
+      return store.state.device
     }
   }
 }
@@ -56,11 +48,10 @@ export default {
 <style scoped lang="scss">
 .project-item{
   width: 80%;
-  margin: 1rem auto;
-  min-height: 80%;
+  margin: 0 auto;
+  min-height: 500px;
   background-color: rgba(166, 77, 121, 0.31);
-  position: relative;
-  padding: 1.25rem 1rem;
+  padding: 1.25rem 0.5rem;
   align-items: flex-start !important;
   .info {
     width: 25%;
@@ -89,13 +80,10 @@ export default {
   }
 }
 .sm-project {
-  padding: 1.25rem 0.25rem;
-  width: 88%;
   .sm-detail{
-    width: 100%;
-    padding: 0;
-    max-height: 500px;
+    background-color: rgba(166, 77, 121, 0.31);
     overflow-y: scroll;
+    max-height: 500px;
     /deep/ .info-item {
       padding: 0.5rem;
       .title {

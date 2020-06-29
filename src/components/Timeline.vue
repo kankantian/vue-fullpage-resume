@@ -11,6 +11,7 @@
 </template>
 
 <script>
+import { store } from '@/store/index'
 export default {
   name: 'Timeline',
   props: {
@@ -23,7 +24,7 @@ export default {
   },
   computed: {
     device() {
-      return this.$store.state.app.device
+      return store.state.device
     }
   }
 }
@@ -71,8 +72,8 @@ export default {
   }
 }
 .sm-timeline {
-  font-size: 0.5rem;
-  padding-top: 15%;
+  font-size: 0.8rem;
+  padding-top: 5%;
   .timeitem {
     .date-range {
       padding-bottom: 0.5rem;
