@@ -1,6 +1,5 @@
 <template>
   <div v-if="device!=='mobile'" class="flex project-item">
-    <!-- <div v-if="device!=='mobile'" class="flex"> -->
     <div class="info">
       <div class="img"><img :src="info.img" alt=""></div>
       <h3 class="pro-name">
@@ -13,14 +12,6 @@
         <InfoItem :key="item.key" :data="item" />
       </template>
     </div>
-    <!-- </div> -->
-    <!-- <div v-else>
-      <div class="detail sm-detail">
-        <temeplate v-for="item in info.detail" :key="item">
-          <InfoItem :data="item" />
-        </temeplate>
-      </div>
-    </div> -->
   </div>
   <div v-else class="sm-project">
     <div class="detail sm-detail">
@@ -89,13 +80,10 @@ export default {
   }
 }
 .sm-project {
-  position: relative;
-  margin: 0 auto;
-  // top: 50%;
-  width: 88%;
   .sm-detail{
     background-color: rgba(166, 77, 121, 0.31);
     overflow-y: scroll;
+    max-height: 500px;
     /deep/ .info-item {
       padding: 0.5rem;
       .title {

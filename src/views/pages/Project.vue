@@ -41,6 +41,10 @@ export default {
             {
               key: '重量',
               value: 'Fusce condimentum urna, id dolor sit amet elit. Curabitur enim. Etiam tellus. Donec porttitor magna. Sed nec nisl ut pede. Morbi quis ante. Integer sollicitudin posuere, lacus ultrices.'
+            },
+            {
+              key: '重量1',
+              value: 'Fusce condimentum urna, id dolor sit amet elit. Curabitur enim. Etiam tellus. Donec porttitor magna. Sed nec nisl ut pede. Morbi quis ante. Integer sollicitudin posuere, lacus ultrices.'
             }
           ]
         },
@@ -59,6 +63,11 @@ export default {
 </script>
 <style scoped lang="scss">
 .project{
-  position: relative;
+  // position: relative;
+  position: absolute;
+  left: 6%;
+  top:50%;
+  transform: translateY(-50%);
+  width: 88%;
 }
 </style>

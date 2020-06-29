@@ -111,6 +111,11 @@ export default {
 .sm-nav{
   .nav_bar{
     width: 100%;
+    li {
+      a{
+        font-size: 1.1rem;
+      }
+    }
   }
 }
 .black{
