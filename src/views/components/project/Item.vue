@@ -22,7 +22,7 @@
       </div>
     </div> -->
   </div>
-  <div v-else class="project-item sm-project">
+  <div v-else class="sm-project">
     <div class="detail sm-detail">
       <template v-for="item in info.detail">
         <InfoItem :key="item.key" :data="item" />
@@ -57,10 +57,9 @@ export default {
 <style scoped lang="scss">
 .project-item{
   width: 80%;
-  margin: 1rem auto;
+  margin: 0 auto;
   min-height: 500px;
   background-color: rgba(166, 77, 121, 0.31);
-  position: relative;
   padding: 1.25rem 0.5rem;
   align-items: flex-start !important;
   .info {
@@ -91,16 +90,12 @@ export default {
 }
 .sm-project {
   position: relative;
+  margin: 0 auto;
   width: 88%;
-  height: 80%;
+  padding: 0.5rem;
+  background-color: rgba(166, 77, 121, 0.31);
+  height: calc(100% - 8rem);
   .sm-detail{
-    padding: 0;
-    max-height: 500px;
-    overflow-y: scroll;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
     /deep/ .info-item {
       padding: 0.5rem;
       .title {

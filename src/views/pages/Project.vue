@@ -59,10 +59,6 @@ export default {
 </script>
 <style scoped lang="scss">
 .project{
-  // width: 90%;
-  // margin: 1rem auto;
-  // // min-height: 90%;
-  // background-color: rgba(166, 77, 121, 0.31);
   position: relative;
 }
 </style>
