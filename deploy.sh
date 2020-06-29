@@ -20,6 +20,6 @@ git commit -m 'deploy'
 # git push -f git@github.com:kankantian.github.io.git master
 
 # 部署到 https://<USERNAME>.github.io/<REPO>
-git push -f https://github.com/kankantian/vue-fullpage-resume.git dev:gh-pages
+git push -f https://github.com/kankantian/vue-fullpage-resume.git master:gh-pages
 
 cd -
